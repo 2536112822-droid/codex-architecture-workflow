@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Site Analysis logo">
+  <rect width="160" height="160" rx="24" fill="#f5f2ec"/>
+  <rect x="22" y="24" width="116" height="112" rx="16" fill="#dce8f0"/>
+  <g fill="#1f6f8b">
+    <rect x="42" y="56" width="24" height="20" rx="2"/>
+    <rect x="72" y="70" width="22" height="34" rx="2"/>
+    <rect x="100" y="50" width="18" height="30" rx="2"/>
+  </g>
+  <g stroke="#2d2d2d" stroke-width="2.2" fill="none">
+    <path d="M38 116c14-18 32-21 50-27"/>
+    <path d="M34 128c15-20 37-24 59-32"/>
+  </g>
+  <path d="M104 40 L122 66 L104 76 L86 66 Z" fill="#c43d3d"/>
+  <path d="M104 40 L110 50 L104 48 L98 50 Z" fill="#ffffff"/>
+  <circle cx="94" cy="104" r="15" fill="none" stroke="#1f6f8b" stroke-width="3" stroke-dasharray="5 4"/>
+  <text x="96" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f6f8b">N</text>
+</svg>

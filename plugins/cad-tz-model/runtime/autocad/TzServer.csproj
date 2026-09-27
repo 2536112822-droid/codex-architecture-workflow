@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>TzServer</AssemblyName>
+    <RootNamespace>TzServer</RootNamespace>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AutoCADDir Condition="'$(AutoCADDir)' == ''">$(ProgramW6432)\Autodesk\AutoCAD 2025</AutoCADDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcMgd">
+      <HintPath>$(AutoCADDir)\acmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>$(AutoCADDir)\acdbmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcCoreMgd">
+      <HintPath>$(AutoCADDir)\accoremgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="ValidateAutoCADReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(AutoCADDir)\acmgd.dll') Or !Exists('$(AutoCADDir)\acdbmgd.dll') Or !Exists('$(AutoCADDir)\accoremgd.dll')"
+           Text="AutoCAD managed SDK assemblies not found. Supply -p:AutoCADDir=&quot;your AutoCAD 2025 directory&quot;. Autodesk assemblies are not redistributed." />
+  </Target>
+</Project>

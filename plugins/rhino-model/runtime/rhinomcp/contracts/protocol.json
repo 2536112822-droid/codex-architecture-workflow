@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "protocol.json",
+  "title": "RhinoMCP Protocol",
+  "description": "TCP socket protocol envelope",
+
+  "$defs": {
+    "command": {
+      "type": "object",
+      "description": "Command sent from MCP server to Rhino plugin",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Command type",
+          "enum": [
+            "create_object",
+            "create_objects",
+            "modify_object",
+            "modify_objects",
+            "delete_object",
+            "get_object_info",
+            "get_object_attributes",
+            "update_object_attributes",
+            "analyze_objects",
+            "measure_objects",
+            "section_profile",
+            "get_selected_objects_info",
+            "get_document_summary",
+            "get_objects",
+            "select_objects",
+            "create_layer",
+            "delete_layer",
+            "get_or_set_current_layer",
+            "execute_rhinoscript_python_code",
+            "execute_rhinocommon_csharp_code",
+            "capture_viewport",
+            "undo",
+            "redo",
+            "boolean_union",
+            "boolean_difference",
+            "boolean_intersection",
+            "loft",
+            "extrude_curve",
+            "sweep1",
+            "offset_curve",
+            "pipe",
+            "project_curve",
+            "intersect_curves",
+            "split_curve",
+            "run_command",
+            "get_commands",
+            "describe_capabilities",
+            "gh_create_document",
+            "gh_get_document_info",
+            "gh_search_components",
+            "gh_batch_search_components",
+            "gh_list_component_categories",
+            "gh_get_available_components",
+            "gh_get_component_type_info",
+            "gh_batch_get_component_type_info",
+            "gh_get_graph",
+            "gh_clear_graph",
+            "gh_list_components",
+            "gh_get_component_info",
+            "gh_get_canvas_state",
+            "gh_capture_preview",
+            "gh_run_solution",
+            "gh_expire_solution",
+            "gh_build_graph",
+            "gh_mutate_graph",
+            "gh_add_component",
+            "gh_delete_component",
+            "gh_layout_components",
+            "gh_connect_components",
+            "gh_disconnect_components",
+            "gh_set_parameter_value",
+            "gh_get_parameter_value",
+            "gh_update_component",
+            "gh_clear_canvas"
+          ]
+        },
+        "params": {
+          "type": "object",
+          "description": "Command-specific parameters"
+        }
+      },
+      "required": ["type", "params"]
+    },
+
+    "successResponse": {
+      "type": "object",
+      "description": "Successful response from Rhino plugin",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "success"
+        },
+        "result": {
+          "type": ["object", "array", "string", "number", "boolean", "null"],
+          "description": "Command-specific result"
+        }
+      },
+      "required": ["status", "result"]
+    },
+
+    "errorResponse": {
+      "type": "object",
+      "description": "Error response from Rhino plugin",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "error"
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message"
+        }
+      },
+      "required": ["status", "message"]
+    },
+
+    "response": {
+      "oneOf": [
+        { "$ref": "#/$defs/successResponse" },
+        { "$ref": "#/$defs/errorResponse" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+interface:
+  display_name: "CAD + 天正 自动制图"
+  short_description: "原子事务、数值 QA 与截图闭环的 CAD+天正制图"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-small.svg"
+  default_prompt: "Use $cad-tz-model to draw or revise this AutoCAD document. Lock the exact instance/document revision, dry-run and atomically apply a typed CAD plan, perform numeric QA plus screenshot review, then save a non-overwriting true DWG/DXF."
+policy:
+  allow_implicit_invocation: true

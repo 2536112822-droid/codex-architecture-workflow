@@ -1,0 +1,32 @@
+{
+  "name": "architecture-aesthetics",
+  "version": "0.1.0",
+  "description": "建筑研习与设计顾问。分类学习建筑方案、空间策略、理论批评、材料感知与视觉叙事，按问题选用有来源的方法；辅助设计与成果优化，每轮由用户选择保存。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "建筑研习与设计顾问",
+    "shortDescription": "分类学习方案与理论，按问题选用方法，每轮选择保存",
+    "longDescription": "建筑研习与设计顾问，原名建筑审美助手。从完整方案、设计思路与空间策略、建筑理论与批评、材料构造感知、视觉表达与设计叙事五类入口学习。依据实际资料解释建筑关系、观点、审美价值及迁移条件，按需补查来源，允许不同理论立场与创造性探索。分类与证据完整度、参考知识和个人偏好分别判断；不自动批量重标旧库。每轮展示学习成果后由用户选择保存方面、作用域和是否归档原件。支持方案、PPT、材质、渲染与CAD成果优化及审阅，保持专业精度核验。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "学习这些建筑资料，按主要用途整理，说明值得理解的观点、空间关系或表现方法，按需核对来源，分析后由我选择保存哪些方面。",
+      "结合我的审美库与当前项目，发挥创造力优化这份方案成果。",
+      "按我的参考优化模型与渲染质感，并核查与已确认设计的一致性。"
+    ],
+    "brandColor": "#A65334",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "architecture-workflow",
+  "interface": {
+    "displayName": "Architecture Workflow"
+  },
+  "plugins": [
+    {
+      "name": "architecture-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/architecture-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "architecture-aesthetics",
+      "source": {
+        "source": "local",
+        "path": "./plugins/architecture-aesthetics"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "site-analysis",
+      "source": {
+        "source": "local",
+        "path": "./plugins/site-analysis"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "su-model",
+      "source": {
+        "source": "local",
+        "path": "./plugins/su-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "cad-tz-model",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cad-tz-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "rhino-model",
+      "source": {
+        "source": "local",
+        "path": "./plugins/rhino-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

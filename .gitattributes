@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary
+*.zip binary
+# Keep vendored upstream provenance hashes stable across operating systems.
+plugins/rhino-model/runtime/rhinomcp/** -text

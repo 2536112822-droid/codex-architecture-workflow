@@ -1,0 +1,6 @@
+interface:
+  display_name: "建筑研习与设计顾问"
+  short_description: "分类学习方案、理论、空间美感与视觉叙事，按问题选用方法，每轮由你选择保存"
+  default_prompt: "使用 $architecture-aesthetics 按这些资料的学习目的，分析有价值的建筑关系或理论观点，按需核对来源与迁移条件，展示成果后由我选择保存哪些方面。"
+policy:
+  allow_implicit_invocation: true

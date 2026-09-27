@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gh_build_graph.json",
+  "title": "gh_build_graph",
+  "description": "Create Grasshopper components, apply values, wire connections, optionally lay out, and optionally solve in one batched operation. Component aliases are local names used by connections, values, groups, preview_policy, and the response aliases map. For follow-up edits or rewires that touch existing components by GUID, alias, or nickname, use gh_mutate_graph.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "components": {
+      "description": "Components or params to create. Every item needs an alias and either component_name or component_guid/guid. GUID takes precedence over name when both are supplied.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "alias": {
+            "$ref": "#/$defs/alias",
+            "description": "Caller-defined id used by this request and returned in aliases."
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Component display name or common alias, for example 'Number Slider' or 'Addition'."
+          },
+          "component_guid": {
+            "$ref": "#/$defs/guid",
+            "description": "Grasshopper component GUID. Takes precedence over component_name."
+          },
+          "guid": {
+            "$ref": "#/$defs/guid",
+            "description": "Alias for component_guid."
+          },
+          "position": {
+            "$ref": "#/$defs/position",
+            "description": "Canvas pivot position [x, y]."
+          },
+          "nickname": { "type": "string", "minLength": 1 },
+          "role": { "type": "string", "minLength": 1 },
+          "value": {
+            "description": "Initial value for special controls such as Number Slider, Boolean Toggle, Panel, or Value List. Sliders accept numbers; toggles accept booleans; panels accept strings."
+          },
+          "min": {
+            "type": "number",
+            "description": "Number Slider minimum. Set this when value may be outside Grasshopper's default 0-1 range."
+          },
+          "max": {
+            "type": "number",
+            "description": "Number Slider maximum. Set this when value may be outside Grasshopper's default 0-1 range."
+          },
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12,
+            "description": "Number Slider decimal places."
+          },
+          "content": { "type": "string", "description": "Panel text content." },
+          "text": { "type": "string", "description": "Alias for Panel text content." },
+          "preview": { "type": "boolean", "description": "Whether this object should show Grasshopper preview." },
+          "enabled": { "type": "boolean", "description": "Whether this object should be enabled for solving." }
+        },
+        "required": ["alias"],
+        "anyOf": [
+          { "required": ["component_name"] },
+          { "required": ["component_guid"] },
+          { "required": ["guid"] }
+        ]
+      }
+    },
+    "connections": {
+      "description": "Wires between aliases or selectors. source and target usually reference component aliases from components.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/connection" },
+      "default": []
+    },
+    "values": {
+      "description": "Optional post-create value updates. target usually references a component alias.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/value_update" },
+      "default": []
+    },
+    "preview_updates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" }
+      }
+    },
+    "preview_policy": { "$ref": "#/$defs/preview_policy" },
+    "groups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/group" }
+    },
+    "layout": {
+      "oneOf": [
+        { "type": "boolean" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "include_groups": { "type": "boolean", "default": false },
+            "x_spacing": { "type": "number", "exclusiveMinimum": 0, "default": 220 },
+            "y_spacing": { "type": "number", "exclusiveMinimum": 0, "default": 90 },
+            "max_columns": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Wrap graph-depth layout after this many columns to avoid a very long horizontal canvas."
+            },
+            "start_position": { "$ref": "#/$defs/position" }
+          }
+        }
+      ]
+    },
+    "recompute": {
+      "type": "boolean",
+      "default": true
+    },
+    "graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rollback_on_error": {
+      "type": "boolean",
+      "default": true
+    },
+    "open_canvas": {
+      "type": "boolean",
+      "default": true,
+      "description": "Open Grasshopper and make the working document active before mutating, so live preview and screenshots can see the generated definition."
+    }
+  },
+  "required": ["components"],
+  "$defs": {
+    "guid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "alias": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$"
+    },
+    "selector": {
+      "type": "string",
+      "minLength": 1
+    },
+    "position": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/selector",
+          "description": "Source alias, GUID, or nickname."
+        },
+        "source_output_index": { "type": "integer", "minimum": 0 },
+        "source_output_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Output parameter name or nickname on source, for example 'R' or 'Result'."
+        },
+        "target": {
+          "$ref": "#/$defs/selector",
+          "description": "Target alias, GUID, or nickname."
+        },
+        "target_input_index": { "type": "integer", "minimum": 0 },
+        "target_input_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Input parameter name or nickname on target, for example 'L' or 'List'."
+        }
+      },
+      "required": ["source", "target"]
+    },
+    "preview_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "type": "string", "enum": ["only", "show", "hide"] },
+        "targets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/selector" },
+          "minItems": 1
+        },
+        "scope": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/selector" },
+          "minItems": 1
+        },
+        "graph_id": { "type": "string", "minLength": 1 }
+      },
+      "required": ["mode", "targets"]
+    },
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "nickname": { "type": "string", "minLength": 1 },
+        "alias": { "$ref": "#/$defs/alias" },
+        "role": { "type": "string", "minLength": 1 },
+        "targets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/selector" },
+          "minItems": 1
+        },
+        "color": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0, "maximum": 255 },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "anyOf": [
+        { "required": ["name"] },
+        { "required": ["label"] },
+        { "required": ["nickname"] }
+      ]
+    },
+    "value_update": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": { "$ref": "#/$defs/selector" },
+        "value": {
+          "description": "Value to apply. Sliders accept numbers and may also use min/max/decimals; toggles accept booleans; panels accept strings."
+        },
+        "input_index": { "type": "integer", "minimum": 0 },
+        "input_name": { "type": "string", "minLength": 1 },
+        "min": { "type": "number", "description": "Number Slider minimum." },
+        "max": { "type": "number", "description": "Number Slider maximum." },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 12, "description": "Number Slider decimal places." }
+      },
+      "required": ["target", "value"]
+    }
+  },
+  "examples": [
+    {
+      "components": [
+        {
+          "alias": "slider_a",
+          "component_name": "Number Slider",
+          "nickname": "A",
+          "value": 3.5,
+          "min": 0,
+          "max": 10,
+          "decimals": 1
+        },
+        {
+          "alias": "add",
+          "component_name": "Addition",
+          "nickname": "Add"
+        }
+      ],
+      "connections": [
+        {
+          "source": "slider_a",
+          "target": "add",
+          "target_input_index": 0
+        }
+      ],
+      "layout": { "enabled": true, "max_columns": 6 },
+      "open_canvas": true,
+      "recompute": true
+    }
+  ]
+}

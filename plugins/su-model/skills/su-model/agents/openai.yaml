@@ -1,0 +1,8 @@
+interface:
+  display_name: "SU 建模"
+  short_description: "可回滚、可量测、可视觉校核的 SketchUp 建模"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-small.svg"
+  default_prompt: "Use $su-model to build or revise this SketchUp model with explicit units, stable semantic IDs, revision guards, numeric validation, multi-view visual inspection, and a non-overwriting save."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,39 @@
+{
+  "name": "su-model",
+  "version": "0.1.0",
+  "description": "用 Codex 结构化驱动 SketchUp：显式单位、稳定语义 ID、修订保护、事务回滚、数值 QA、多视图检查与 AI 表现图。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "keywords": [
+    "sketchup",
+    "architecture",
+    "3d-modeling",
+    "image-to-model",
+    "rendering"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SU 建模",
+    "shortDescription": "可回滚、可量测的 SketchUp 建模与表现",
+    "longDescription": "通过 su-mcp protocol 2 在 SketchUp 桌面版中执行原子建模计划，记录模型修订与构件语义，完成结构化检查、尺寸验证、多视图截图、非覆盖保存，并可把干净 SU 视图交给 Codex ImageGen 进行结构受控的表现图迭代。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "用结构化计划在 SketchUp 中建立这套建筑模型，并完成尺寸与多视图校核。",
+      "把这张参考图转换为带稳定构件 ID 的可编辑 SU 模型。",
+      "检查当前 SU 模型，只做最小修改并输出结构受控的表现图。"
+    ],
+    "brandColor": "#2464C8",
+    "composerIcon": "./assets/composerIcon.svg",
+    "logo": "./assets/composerIcon.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

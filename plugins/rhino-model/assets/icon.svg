@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rhino parametric modeling">
+  <rect width="64" height="64" rx="14" fill="#6B5B95"/>
+  <path d="M17 19 32 11l15 8v18L32 46 17 37Z" fill="none" stroke="#FFF" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M17 19l15 9 15-9M32 28v18" fill="none" stroke="#D8D2E8" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M13 50c8-12 17 8 26-4 5-7 8-5 12-1" fill="none" stroke="#BFE4FF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="13" cy="50" r="3" fill="#FFF"/>
+  <circle cx="39" cy="46" r="3" fill="#FFF"/>
+  <circle cx="51" cy="45" r="3" fill="#FFF"/>
+</svg>

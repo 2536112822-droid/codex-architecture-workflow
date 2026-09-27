@@ -1,0 +1,7 @@
+interface:
+  display_name: "场地分析"
+  short_description: "真实数据、来源追踪与九宫格建筑场地分析"
+  brand_color: "#1f6f8b"
+  default_prompt: "Use $site-analysis to build a traceable architectural site-analysis board from this location and evidence. Verify CRS, provenance, QA, and the rendered board before delivery."
+policy:
+  allow_implicit_invocation: true

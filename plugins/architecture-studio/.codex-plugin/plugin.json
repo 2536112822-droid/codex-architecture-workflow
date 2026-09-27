@@ -1,0 +1,40 @@
+{
+  "name": "architecture-studio",
+  "version": "0.1.0",
+  "description": "用同一版本化项目串联任务书、场地分析、SketchUp/Rhino 建模、CAD 制图、彩平、指标核算与表现交付。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "keywords": [
+    "architecture",
+    "design-workflow",
+    "sketchup",
+    "autocad",
+    "site-analysis",
+    "rhino"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "建筑设计工作室",
+    "shortDescription": "串联任务书、SU/Rhino、CAD、彩平与指标",
+    "longDescription": "面向跨阶段建筑设计的 Codex 总控：关联任务书依据、设计取舍、SketchUp 或 Rhino 原生模型、CAD 平立剖、彩平和指标，支持局部回改、受影响成果检查及可编辑交付。按实际请求选择阶段，保留项目风格与专业工具验证。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "把场地、设计要求和参考图串成一套可迭代的建筑方案。",
+      "从参考图建 SU 模型，再生成可核查的 CAD 平立剖。",
+      "检查当前建筑项目，并给出下一轮最小修改方案。"
+    ],
+    "brandColor": "#17324D",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

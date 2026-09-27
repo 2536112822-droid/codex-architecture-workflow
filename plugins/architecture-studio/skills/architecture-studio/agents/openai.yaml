@@ -1,0 +1,9 @@
+interface:
+  display_name: "建筑设计工作室"
+  short_description: "串联任务书、场地、SU/Rhino、CAD、彩平与指标的建筑设计总控"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#17324D"
+  default_prompt: "使用 $architecture-studio 把我的场地、设计要求和参考图组织成一套可验证、可回改的建筑方案。"
+policy:
+  allow_implicit_invocation: true

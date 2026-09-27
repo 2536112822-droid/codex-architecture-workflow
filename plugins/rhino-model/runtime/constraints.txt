@@ -1,0 +1,2 @@
+# RhinoMCP 0.3.2 uses the MCP Python SDK v1 FastMCP API.
+mcp>=1.16.0,<2

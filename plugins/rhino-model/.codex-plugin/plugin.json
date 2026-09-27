@@ -1,0 +1,40 @@
+{
+  "name": "rhino-model",
+  "version": "0.1.0",
+  "description": "用 Codex 安全启动 Rhino 8，通过 RhinoMCP 进行结构化 Rhino/Grasshopper 建模、检查、视觉校核与可靠 3DM 交付。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "keywords": [
+    "rhino",
+    "grasshopper",
+    "architecture",
+    "nurbs",
+    "3d-modeling",
+    "3dm"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rhino + Grasshopper 建模",
+    "shortDescription": "安全启动、结构化建模与双重校核的 Rhino 工作流",
+    "longDescription": "在 Codex 内统一完成 Rhino 启动与目标窗口锁定、RhinoMCP 连接、曲线/曲面/实体和 Grasshopper 参数图建模、对象级数值检查、多视图视觉校核、版本化 3DM 保存以及连接收尾。默认保留对象 GUID、避免覆盖原文件，并禁止任意命令与代码执行入口。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "启动 Rhino、连接 MCP，并安全完成这个建模任务与验证。",
+      "检查当前 Rhino 模型，按对象 GUID 做最小修改并完成校核。",
+      "在 Grasshopper 中构建可编辑参数图，检查连线与求解结果。"
+    ],
+    "brandColor": "#6B5B95",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

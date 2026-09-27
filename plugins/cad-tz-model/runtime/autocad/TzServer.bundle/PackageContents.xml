@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    SchemaVersion="1.0"
+                    ProductType="AutoCAD"
+                    Name="TzServer"
+                    AppVersion="2.0.0"
+                    Author="2536112822-droid"
+                    Description="Codex typed AutoCAD and Tianzheng protocol-2 bridge">
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD" SeriesMin="R25.0" />
+    <ComponentEntry AppName="TzServer"
+                    ModuleName="./Contents/Windows/TzServer.dll"
+                    AppAutoLoad="true"
+                    LoadOnCommandInvocation="false" />
+  </Components>
+</ApplicationPackage>

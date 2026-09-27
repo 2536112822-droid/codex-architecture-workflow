@@ -1,0 +1,531 @@
+{
+  "repository": "https://github.com/jingcheng-chen/rhinomcp",
+  "commit": "235169c397c6f57984639797daeffd537199db5d",
+  "server_version": "0.3.2",
+  "license": "MIT",
+  "unchanged_files": [
+    {
+      "path": "LICENSE",
+      "sha256": "d6edbc01deccbaf4abf09b5014d3884f37708cd44aa1634fdbb6e37c841e09aa"
+    },
+    {
+      "path": "server/pyproject.toml",
+      "sha256": "fa405dbca6231dda3cc86072e978861a4087e7ade7bbe6a4319f26e1d36d96ab"
+    },
+    {
+      "path": "server/README.md",
+      "sha256": "7a25f5160188f7f27c36f75b07f55f975b60dbc2cc2b31be45e39a79ed16602b"
+    },
+    {
+      "path": "server/src/rhinomcp/__init__.py",
+      "sha256": "c5155ea5e127bff12864382144b4adc8fbbaa4eb25cbb32970d5f0b0f252e4fa"
+    },
+    {
+      "path": "server/src/rhinomcp/server.py",
+      "sha256": "4d0d0e5e00467ce29201f83451e03f9edc308debd9b8fcab9092191016540b53"
+    },
+    {
+      "path": "server/src/rhinomcp/validation.py",
+      "sha256": "5196f855e4e94259f2c22b87a38f51ae91e71e795a400d7f7ff837a4ab465f22"
+    },
+    {
+      "path": "server/src/rhinomcp/prompts/assert_general_strategy.py",
+      "sha256": "2b4d667c701841ca47b5f2ab35f5c0306edc9004ddc0d2e148a06fafd645c962"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/_grasshopper_common.py",
+      "sha256": "e043b3b189599daf92ca161871f20795f4ba6e2d509c858fe0888071012986fe"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/advanced_geometry.py",
+      "sha256": "4595c16ab8ef982b0ed02b8d62cc8b7af73946571f6eae4292719a6711da1127"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/analyze_objects.py",
+      "sha256": "e39a24ba748159c69b2d0ebd619686701b5cb955a28870f4b9d73875f6bc466d"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/boolean_operations.py",
+      "sha256": "50c03b157191ff539fa048c5615d3d96d4248e39e7df5816e2ddca2456015ade"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/capture_viewport.py",
+      "sha256": "5d782d85d27f399db4b3a400577d8ca6c17c0d3cac0e167ac6b6d1f6fa3c493d"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/create_layer.py",
+      "sha256": "3da519d11a10120f7135ba073c13e08c03d51c709e8bddf4bd9289595f3e6bf4"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/create_object.py",
+      "sha256": "14d27ffa0394cb625a3ad2f9463d70a22b8cdd627c3db73baced6cfb0752b639"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/create_objects.py",
+      "sha256": "50bc96c943caaa985091efa6ba7b783cc02f5f5b00d7cc00a023b562f4e9c212"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/curve_operations.py",
+      "sha256": "d7785782be08f9d673e6c08cac5670d4ac8fb01ff81a8954a4457e3a82a26a59"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/delete_layer.py",
+      "sha256": "84a2fa4768e822ee2e334d4c805da908e05a317f7e4059f8496bbfc70e59f6cd"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/delete_object.py",
+      "sha256": "09be144e6a0a4d3a860f97abf237334beecf946b7fb95db968c5c9006fb64e5e"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/describe_capabilities.py",
+      "sha256": "b0d9df564806af2453d759617c509df9f5494688dd4e737df8fba32f5a0f052c"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/execute_rhinocommon_csharp_code.py",
+      "sha256": "8dfdbac445b0f1f9f0a0c22bd7429b9d726bad3bff59de23d35857c0db0d6bfb"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/execute_rhinoscript_python_code.py",
+      "sha256": "fafea67abca26123f9f3b42b2b4153d576c1436f910ee0fb04b16c8711728cae"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_commands.py",
+      "sha256": "09fc35903ce4f4a95b9247204b705ced028bec01446b035041070bd26d1e6ce0"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_document_summary.py",
+      "sha256": "366b7fbd091d13a77da55d9f00d06ce30e709bfd7a58141100e5e1e8a378d33a"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_object_info.py",
+      "sha256": "4f07873c0ed83f8d8826afe638478c5aa3666dc08f169612152aab283ee3265a"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_objects.py",
+      "sha256": "8ca4bcc4ae4f7c3e94928338434e117ea6697b2fc46fc512764f2a4450818908"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_or_set_current_layer.py",
+      "sha256": "44686aa6a04fae5a9c6b8d24e81e13e4a1dd2584714482d62cf939b53a5accfb"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/get_selected_objects_info.py",
+      "sha256": "0981918d1306e67ac349a95ff7f78ec6e688b9f9813148dd734dd537fa2ff4e2"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_build.py",
+      "sha256": "9de714b9f2d72b637bbd72b3bdc513e2847693f4e8eb8dd555bf4a3fdc1679e9"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_catalog.py",
+      "sha256": "c18eae5921198246aa3353cdafeee9d114b48872cecf09adcf14597bac90efd3"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_components.py",
+      "sha256": "51c5a208c37fac5362ad73efd84b5ff8f4417b67425410645e2a446e11603783"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_connections.py",
+      "sha256": "0f616cb2c1b51b91d7df31e55af43890afdeb0b203f1d22e9625affaff5d69ec"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_document.py",
+      "sha256": "b06c5e35b5fbfd2a25c118019b9e913afd3a37c48eadba7d23363532cf4a26df"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_graph.py",
+      "sha256": "597603c191167285709cf19bcb0651a06d8e8c68b3f722b0196819a32b32e32b"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_mutation.py",
+      "sha256": "de82eac73b00c4c0f0ae7f0e6fe769d323c653bfa3357db6eb8c4518936b61b0"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_parameters.py",
+      "sha256": "8430ed958f53909d237df81378e7c6bc716bb909fbc6c8bc7ac53c89deb26f00"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_preview.py",
+      "sha256": "1ab66abac847c35137ba6259737e1aacb883889f66d504636cd8e5282c625620"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/grasshopper_solution.py",
+      "sha256": "10468cc275efa1f562ddda9a09da623b0e1bcb95010ae409b380064b7e465392"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/measure_objects.py",
+      "sha256": "d2200a22b8ced869151f363d6d22af4709e9c4f0560787cb05de68bacbc6d4ff"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/modify_object.py",
+      "sha256": "d9c7c7ae82e9bf4e940c84c7c2bcd970ebea0a8add8b638f1f42122d4f0779d0"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/modify_objects.py",
+      "sha256": "64a9fcd4cd7b3db3ba89afe57a64adc705eb957cd00f5ba51112c783deceeb19"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/object_attributes.py",
+      "sha256": "0a02f22be1871cbe664f99c4013c4240b4acaaf5c4d471ed50cb4fc3f6609769"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/rhinoscript_docs.py",
+      "sha256": "005613f9fbeeb0287f7b18dea38df4efedb2803289f941fe1fe5e2c28324ca34"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/run_command.py",
+      "sha256": "70b7017fd3d15d97408fc678ae586cfb0941cc31c96dc5a0a315b6c9d57a155a"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/section_profile.py",
+      "sha256": "7938d9cb32ef97d451294f44b6d3898b6be0da3f919661da2fb3b19195b91e5b"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/select_objects.py",
+      "sha256": "5ebf59622cdaf3b88f63847cee9649ff8cf27289d6c12bb73fae984ac17fffe1"
+    },
+    {
+      "path": "server/src/rhinomcp/tools/undo.py",
+      "sha256": "ed94859ca2277e86e320148e60ecab702aa0d4b2d615568474abee4ded5874cd"
+    },
+    {
+      "path": "contracts/protocol.json",
+      "sha256": "127cae6d94ec3c320adc3366c5c08316ac1f98804fa7a1dd01496f1e15fff11e"
+    },
+    {
+      "path": "contracts/README.md",
+      "sha256": "a7dcb0107f7d83e0c89de7b5bbc4fd9c8f06eb37b93a2821547feb48c79ec309"
+    },
+    {
+      "path": "contracts/test_schemas.py",
+      "sha256": "45e75a525ebdec546bec4daa0c7b420f0ddd44e04b7adeeca7278a2ff1b8df7f"
+    },
+    {
+      "path": "contracts/commands/analyze_objects.json",
+      "sha256": "44497542f59f1cd6486ff0ce20772a46a58da9d36a17e863ba439deb89ff443d"
+    },
+    {
+      "path": "contracts/commands/boolean_difference.json",
+      "sha256": "80edbb64ca1b3069ab09574f7b35030112176bf8856482146a803aefb779ead1"
+    },
+    {
+      "path": "contracts/commands/boolean_intersection.json",
+      "sha256": "83d149b1a0b2d4b3ad85a202e7cc3913984953b2658474219957669aeae061da"
+    },
+    {
+      "path": "contracts/commands/boolean_union.json",
+      "sha256": "b783cc5cd4eb79243042007f183de592c9712f9a840cd86e3a1ff035231fedb2"
+    },
+    {
+      "path": "contracts/commands/capture_viewport.json",
+      "sha256": "a9f6481122ae520bad5369bf6806faf31a3f1564523fb60525139f48c99db75a"
+    },
+    {
+      "path": "contracts/commands/create_layer.json",
+      "sha256": "d8aa039a509e012b4c3c88dfd99f51330e6a99c1b0f2c430e5d6d387919e2b97"
+    },
+    {
+      "path": "contracts/commands/create_object.json",
+      "sha256": "ef5325a8a7a31fc8f6f9e60010a30d4fabb96eba39b534c328de8d949347640a"
+    },
+    {
+      "path": "contracts/commands/create_objects.json",
+      "sha256": "d08e136a92f3e311d777ec7c1f0d1a95dac7b625fdd4bb6e41d03cc3400420eb"
+    },
+    {
+      "path": "contracts/commands/delete_layer.json",
+      "sha256": "b349e6ab84947c9be6d0e4bedcb2ebf5f8a66b9e7cd5a050a50714a046fe32ea"
+    },
+    {
+      "path": "contracts/commands/delete_object.json",
+      "sha256": "f1540cfaab0664d99bf65d46702cb48a4582e2781be626177cfbc08af87206bd"
+    },
+    {
+      "path": "contracts/commands/describe_capabilities.json",
+      "sha256": "d190aa5cc5f7ac39a0a76ad69cfddb09a1c17cc56963dcd7bbbd1bdde4608a2c"
+    },
+    {
+      "path": "contracts/commands/execute_rhinocommon_csharp_code.json",
+      "sha256": "18d1d17fcefc32f8273a1a5f5a4fb6ead81329059af97342a389e3086076d846"
+    },
+    {
+      "path": "contracts/commands/execute_rhinoscript_python_code.json",
+      "sha256": "856c6eda255927569ed0fb41551169b5698aa13badd24b2aa8a4beb2c255e00a"
+    },
+    {
+      "path": "contracts/commands/extrude_curve.json",
+      "sha256": "e9ffc304189a122f642b673d212419599586c479c2e42ed72f8dd8397f7d92e1"
+    },
+    {
+      "path": "contracts/commands/get_commands.json",
+      "sha256": "2c5994a2ae950833540c7840f9138003e8f0522ee878d15b99adfb35d65b06d6"
+    },
+    {
+      "path": "contracts/commands/get_document_summary.json",
+      "sha256": "8c829c7ddb107108dfb94619d79521e0b75664892dcacb53837177b7da47db95"
+    },
+    {
+      "path": "contracts/commands/get_object_attributes.json",
+      "sha256": "47faa7ab18724dac3ec3b2c2a506e30a109ebdb74322cdbe350003359546a9ac"
+    },
+    {
+      "path": "contracts/commands/get_object_info.json",
+      "sha256": "596d41424279fd258e18309163537b83f39e47a9df4b6c7b2a2728319b342e22"
+    },
+    {
+      "path": "contracts/commands/get_objects.json",
+      "sha256": "54d46bd5718f02a09d843182e8dd6bdfb14f8aef097acc9bab83e52c6b335725"
+    },
+    {
+      "path": "contracts/commands/get_or_set_current_layer.json",
+      "sha256": "b6e28d5d05d6271f7714bde0667d1d07c09eb84ea230a4555a8e495ddb7ef988"
+    },
+    {
+      "path": "contracts/commands/get_selected_objects_info.json",
+      "sha256": "c1548be05f2ecfc187a21a611dedcfa2011598253fa8b4f91833cc3cef024afe"
+    },
+    {
+      "path": "contracts/commands/gh_add_component.json",
+      "sha256": "1e65d9edf2311061003fa28f07e176ddcd9825c7cc2da70dc62e41520e6c6a5c"
+    },
+    {
+      "path": "contracts/commands/gh_batch_get_component_type_info.json",
+      "sha256": "fbf249857d305fcef1d2331384c4e4b3646883ee2f41f06b44e9d3b8b7c381d6"
+    },
+    {
+      "path": "contracts/commands/gh_batch_search_components.json",
+      "sha256": "1d0b2d79e555319d8a1f95d15509544d61b608a48c752a2511cc0a23b6e5ea46"
+    },
+    {
+      "path": "contracts/commands/gh_build_graph.json",
+      "sha256": "e0f2eca732deb967f8e880bee40d7d0cfb753c90fd3efbd0649a5f4255d46583"
+    },
+    {
+      "path": "contracts/commands/gh_capture_preview.json",
+      "sha256": "a64ee332fb4f06315c6b45d723c1df256aab69f3e658133591e94432b7c4316e"
+    },
+    {
+      "path": "contracts/commands/gh_clear_canvas.json",
+      "sha256": "a777b3c590aca9b061969faaa5e0fc07417261b2c9cab1631e886be4a138d6d8"
+    },
+    {
+      "path": "contracts/commands/gh_clear_graph.json",
+      "sha256": "5247d6bf7bb473365fe123c6941e02074f24040a4cbd9c9ed9a7f41d5639a722"
+    },
+    {
+      "path": "contracts/commands/gh_connect_components.json",
+      "sha256": "910566a26b0b916920636bed9886f60be99594d321e5eced4cee4db0a8d6c6a6"
+    },
+    {
+      "path": "contracts/commands/gh_create_document.json",
+      "sha256": "c755e53fb42b83af68f1aec825f5c2f2aafeaa95f4e6694e998d6a4f99b74eae"
+    },
+    {
+      "path": "contracts/commands/gh_delete_component.json",
+      "sha256": "72a26c6cafda9595b1e89dd8bc69f970d0fb1450d6a64be6ee7405ee4df7794b"
+    },
+    {
+      "path": "contracts/commands/gh_disconnect_components.json",
+      "sha256": "8a436ac8862ca5aaa115f3c07e6d48e374d38e441cad3b4c9c5e9546829f7740"
+    },
+    {
+      "path": "contracts/commands/gh_expire_solution.json",
+      "sha256": "038484616f883221e4264eee64e8aaddcbcfd6c587c74db37d99a37b8ce06ec0"
+    },
+    {
+      "path": "contracts/commands/gh_get_available_components.json",
+      "sha256": "9d027e8dc206e80f7487506bb2d7367f285ec46903a210a23f55b15daf7c18a7"
+    },
+    {
+      "path": "contracts/commands/gh_get_canvas_state.json",
+      "sha256": "de812d4873fa0b35458b7e02dae6b46a934b445a7dd8d28db11d9322b0139ec2"
+    },
+    {
+      "path": "contracts/commands/gh_get_component_info.json",
+      "sha256": "1059dd84078c9c7ecbc090c3929fd0856a927e838fb013b41b1c4d59e88858c4"
+    },
+    {
+      "path": "contracts/commands/gh_get_component_type_info.json",
+      "sha256": "5f2109ad838dc135276479c25c9a8b902fbc6127a3872818c12caf4877ed83e6"
+    },
+    {
+      "path": "contracts/commands/gh_get_document_info.json",
+      "sha256": "05db28f6f5b0ce12caa1e6e0345186c04a0748ad45abcf19a8804ba0956eb5fa"
+    },
+    {
+      "path": "contracts/commands/gh_get_graph.json",
+      "sha256": "cfa0330a0b4fee2eb644a934efc68dae915a8fc19f5bb22fad204105818cb3db"
+    },
+    {
+      "path": "contracts/commands/gh_get_parameter_value.json",
+      "sha256": "16b9fc384a8bf0db32f68211955101b72d75b714072199a70c55cc8a4489b8d7"
+    },
+    {
+      "path": "contracts/commands/gh_layout_components.json",
+      "sha256": "f9758a3dfe7bb53ba994d1190751f4c3bff6284ebd571d7c690a0d4c6f4a0809"
+    },
+    {
+      "path": "contracts/commands/gh_list_component_categories.json",
+      "sha256": "909bcd54fef864e1c5368e378f6400512b6139dca5065389b61d3e38cc2425c9"
+    },
+    {
+      "path": "contracts/commands/gh_list_components.json",
+      "sha256": "60c7f8c6984cefa9cd4c6c2e164bd22992bc699c02b0773603b7502f5a6bcc09"
+    },
+    {
+      "path": "contracts/commands/gh_mutate_graph.json",
+      "sha256": "ab2e29e1f4e8eddb43093884ab50b7434eec7e551fb49b36f03d27284e3745ec"
+    },
+    {
+      "path": "contracts/commands/gh_run_solution.json",
+      "sha256": "6cef9fb0c960341b94b5ac344d0646e122b3abbb2fb532ad264db0020df571d3"
+    },
+    {
+      "path": "contracts/commands/gh_search_components.json",
+      "sha256": "ee894aa26f551bfb8a040ad2db9ac4ce3d23bb83f30f76ca9ead8cae908815f3"
+    },
+    {
+      "path": "contracts/commands/gh_set_parameter_value.json",
+      "sha256": "a5f6203750317513e402e9d7fcb27b58595fd1f7a609f751cf1ed992d3f7cdec"
+    },
+    {
+      "path": "contracts/commands/gh_update_component.json",
+      "sha256": "b21f012f729486021253200ab76eaf8ac96c05b4f6adddcb8d4602f8429b54e0"
+    },
+    {
+      "path": "contracts/commands/intersect_curves.json",
+      "sha256": "cfcd700a95ab308c9d2f7a87e94eeca7c9717fb8740cd269375b469ebfd89ba6"
+    },
+    {
+      "path": "contracts/commands/loft.json",
+      "sha256": "f0aa9208619b6b85e1585356ab2694e4ec5193c7757849b514d721adf3ab98ce"
+    },
+    {
+      "path": "contracts/commands/measure_objects.json",
+      "sha256": "3b1380a5032bb7d5ccb9c30dbc13b024938fb2f14cd2daf11bba0918c756a136"
+    },
+    {
+      "path": "contracts/commands/modify_object.json",
+      "sha256": "3f8da2ebc05db7ce24cda0226b27b642034cf4500f5fc2167a2d3670eb92d00a"
+    },
+    {
+      "path": "contracts/commands/modify_objects.json",
+      "sha256": "7d0820364b720b841304dd92c6ee08620b2e85d0bffc0804e782854570e49f56"
+    },
+    {
+      "path": "contracts/commands/offset_curve.json",
+      "sha256": "5853d4f5f79f551d6d3d6a6a7f6aab5c484362408cdab5bfd9271e1c154c0212"
+    },
+    {
+      "path": "contracts/commands/pipe.json",
+      "sha256": "a0303d62bd55cacadb188a3a1af9c7336cdfe055075b6b0a0ffede07e4fafbc1"
+    },
+    {
+      "path": "contracts/commands/project_curve.json",
+      "sha256": "11ba1b3d48e4e6973f448e41da48ebbe924e5e58ec2284ad0a3614b1de9b3a4f"
+    },
+    {
+      "path": "contracts/commands/redo.json",
+      "sha256": "ce93c3ad3cfcd811ae48ac7361cd353b3a58398850b4abcc6f277df5e19eb542"
+    },
+    {
+      "path": "contracts/commands/run_command.json",
+      "sha256": "475ebc83232f0e8d2ce0b9dda9924e0bbac008033c617466c8e7a6a385a51f2b"
+    },
+    {
+      "path": "contracts/commands/section_profile.json",
+      "sha256": "12dbd5a0fb753f6ddfa4e87b3577f9fd394efacccef9d7b7b45bf56b00703682"
+    },
+    {
+      "path": "contracts/commands/select_objects.json",
+      "sha256": "6a14997bbcc9454b8c70775189f9e9a83be7e13aee9fed0e925aaf63abdeae3b"
+    },
+    {
+      "path": "contracts/commands/split_curve.json",
+      "sha256": "bc9c51878d6718f701ef1ff007f38e2e9e324f135211975276d47387ab073cf0"
+    },
+    {
+      "path": "contracts/commands/sweep1.json",
+      "sha256": "2ac7c127f41a184505fb9297c13a9260b3d76fd8a3b6644421b488020cd4116c"
+    },
+    {
+      "path": "contracts/commands/undo.json",
+      "sha256": "23f70a5435265e065fc3a5b150ed4a8a0b71be06e1eabf0263c951f591fcb05c"
+    },
+    {
+      "path": "contracts/commands/update_object_attributes.json",
+      "sha256": "15cee4011258235fb5bdb94fa1b5913653f50f57a5f66b7a12cbe5771a4b031e"
+    },
+    {
+      "path": "contracts/common/definitions.json",
+      "sha256": "7f38dc506ddbf5f435f960da61a78e95c708e6b890a565c71cdef7d9f7100939"
+    },
+    {
+      "path": "contracts/responses/analyze_objects_result.json",
+      "sha256": "d0005dbcc9af161b0b605bf395cfee72949347a25978582a49d9e560f1ff4ffa"
+    },
+    {
+      "path": "contracts/responses/capabilities.json",
+      "sha256": "dfa931b508db350f4ee93cb11832101b90138d70be537dafb29522af69a12285"
+    },
+    {
+      "path": "contracts/responses/capture_viewport_result.json",
+      "sha256": "e0b3040e87e841f16d7917ca8ac846b19bff8f4117d8380c7438d688bcf60c23"
+    },
+    {
+      "path": "contracts/responses/change_delta.json",
+      "sha256": "4dc0c7ef8a2e9a55f159275e9eadaa1483b6c10d40ea2c92af7cd6d7ea1a4f4b"
+    },
+    {
+      "path": "contracts/responses/change_health.json",
+      "sha256": "df72c60b128d24880317821961757dd697d8ff4240333a76606f452b83adbd4b"
+    },
+    {
+      "path": "contracts/responses/curve_operation_result.json",
+      "sha256": "3ce0ca1d3714886913d4e4758b4137e5e57e2b184f5e5e4673108be2388b0f49"
+    },
+    {
+      "path": "contracts/responses/delete_result.json",
+      "sha256": "8b28f0e21f83ed05e4fde0261300371f863bacf13f89a6c8585c922c78bce637"
+    },
+    {
+      "path": "contracts/responses/document_summary.json",
+      "sha256": "f96c3ed7db1c97d99062ebfb6b7dc231db5c3812521fd60a09038b61c50b08f6"
+    },
+    {
+      "path": "contracts/responses/execute_script_result.json",
+      "sha256": "ef38d837dffc1d19438dc49b81859a3302c653f622dc9cf580afdbad70255955"
+    },
+    {
+      "path": "contracts/responses/get_objects_result.json",
+      "sha256": "19998353383e4a48093df1bd2b3ca7b575a5c2519d6e78f36badf580fbc12892"
+    },
+    {
+      "path": "contracts/responses/layer_info.json",
+      "sha256": "4c1710b85ca15df976779103d106ddee0bd62ff884208d66a14ae5719e09e519"
+    },
+    {
+      "path": "contracts/responses/measure_result.json",
+      "sha256": "9cc152b72d37a707d2995c6ac1ce0a0af4ae6a0c51354a86474b2b263a19d867"
+    },
+    {
+      "path": "contracts/responses/object_attributes.json",
+      "sha256": "15cb8956e0019ca08802f2ab21c5060bf3f9d7dbe7a51969158ddae2e3282f01"
+    },
+    {
+      "path": "contracts/responses/object_info.json",
+      "sha256": "00942b01508eef1661d1e6283f6523d44de90d9680a7f79f812ae0e7aab259e4"
+    },
+    {
+      "path": "contracts/responses/section_profile_result.json",
+      "sha256": "f578bc4a6de953bfc3112d98cb147a8ed86d7a0484491b93a28017eec255e642"
+    },
+    {
+      "path": "contracts/responses/select_result.json",
+      "sha256": "da4547be102e6aee75bda69a13fd07f2e85985bd67d695127fe8d8f4f5f15647"
+    }
+  ],
+  "excluded_source": "server/src/rhinomcp/static/rhinoscriptsyntax.py",
+  "excluded_source_sha256": "7101fe10011ff3b1e71f7d23c6760bbc525f854857d893e250f12391f68594ba",
+  "replacement": "A local stub reports that extracted RhinoScript documentation is not bundled."
+}

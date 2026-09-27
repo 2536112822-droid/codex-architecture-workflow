@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Architecture Studio">
+  <rect width="128" height="128" rx="28" fill="#17324D"/>
+  <path d="M22 94h84M30 94V55l34-27 34 27v39M47 94V65h34v29" fill="none" stroke="#F4F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 28v66M30 55h68" fill="none" stroke="#E85D3F" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,5 @@
+# Optional full offline test suite, including synthetic geospatial fixtures.
+PyYAML>=6,<7
+Pillow>=10,<13
+jsonschema>=4.20,<5
+-r plugins/site-analysis/skills/site-analysis/scripts/requirements.txt

@@ -1,0 +1,40 @@
+{
+  "name": "cad-tz-model",
+  "version": "0.1.0",
+  "description": "用 Codex 通过 AutoCAD 内部事务桥与天正 T30 进行建筑制图：目标锁定、dry-run、原子提交、数值 QA、截图复核和真实 DWG/DXF。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "keywords": [
+    "autocad",
+    "tianzheng",
+    "architecture",
+    "cad",
+    "dwg",
+    "dxf"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CAD + 天正 自动制图",
+    "shortDescription": "原子事务与双重 QA 的建筑 CAD 制图",
+    "longDescription": "通过注入 AutoCAD 2025 的 TzServer protocol 2 在主线程和数据库事务内绘制可编辑实体，支持多实例选择、图纸修订保护、幂等批量计划、数值验证、窗口截图、真正的 DWG/DXF 输出，并以异步任务方式安全调用天正 T30 命令。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "用结构化 CAD plan 绘制这张建筑平面图，先 dry-run，再原子提交并验证。",
+      "把这张草图转换为可编辑、分图层、带标注的 DWG。",
+      "检查当前图纸并用最小补丁修复数值和视觉问题。"
+    ],
+    "brandColor": "#C43D3D",
+    "composerIcon": "./assets/composerIcon.svg",
+    "logo": "./assets/composerIcon.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

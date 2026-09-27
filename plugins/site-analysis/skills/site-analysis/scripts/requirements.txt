@@ -1,0 +1,10 @@
+numpy
+pandas
+geopandas
+shapely
+pyproj
+requests
+matplotlib
+Pillow
+osmnx
+scipy

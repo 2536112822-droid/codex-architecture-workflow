@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.codex/architecture-project.schema.json",
+  "title": "Architecture Project Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "revision",
+    "units",
+    "coordinate_reference",
+    "brief",
+    "levels",
+    "elements",
+    "views",
+    "evidence",
+    "artifacts",
+    "qa",
+    "history"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "revision": {"type": "integer", "minimum": 0},
+    "units": {"enum": ["mm", "cm", "m", "in", "ft"]},
+    "coordinate_reference": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["local", "epsg", "wkt"]},
+        "epsg": {"type": "integer", "minimum": 1},
+        "origin": {"$ref": "#/$defs/point3"},
+        "wkt": {"type": "string"}
+      }
+    },
+    "brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["known", "inferred", "unknown"],
+      "properties": {
+        "known": {"type": "array", "items": {"type": "string"}},
+        "inferred": {"type": "array", "items": {"$ref": "#/$defs/inference"}},
+        "unknown": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "levels": {"type": "array", "items": {"$ref": "#/$defs/level"}},
+    "elements": {"type": "array", "items": {"$ref": "#/$defs/element"}},
+    "views": {"type": "array", "items": {"$ref": "#/$defs/view"}},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "artifacts": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "qa": {"type": "array", "items": {"$ref": "#/$defs/qa"}},
+    "history": {"type": "array", "items": {"$ref": "#/$defs/history"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "point3": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}], "items": false},
+    "inference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "confidence", "evidence_ids"],
+      "properties": {
+        "statement": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "level": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "elevation", "height"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "elevation": {"type": "number"},
+        "height": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "type"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"type": "string", "minLength": 1},
+        "level_id": {"$ref": "#/$defs/id"},
+        "source_evidence_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "view": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "type"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"enum": ["plan", "elevation", "section", "perspective", "axonometric", "analysis"]},
+        "level_id": {"$ref": "#/$defs/id"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "type", "path"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"type": "string"},
+        "path": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "format": "uri"}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "stage", "path", "source_revision", "status"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "stage": {"enum": ["site", "model", "drawing", "render", "presentation", "report"]},
+        "path": {"type": "string", "minLength": 1},
+        "source_revision": {"type": "integer", "minimum": 0},
+        "status": {"enum": ["draft", "verified", "superseded", "failed", "presentation_only"]}
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["gate", "status", "evidence"],
+      "properties": {
+        "gate": {"type": "string"},
+        "status": {"enum": ["pass", "warning", "fail", "not_applicable"]},
+        "evidence": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "history": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "summary"],
+      "properties": {
+        "revision": {"type": "integer", "minimum": 0},
+        "summary": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

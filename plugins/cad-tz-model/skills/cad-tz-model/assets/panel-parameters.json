@@ -1,0 +1,15 @@
+{
+  "unit": "mm",
+  "origin": [100, -50],
+  "width": 600,
+  "height": 400,
+  "rows": 3,
+  "columns": 5,
+  "diameter": 20,
+  "pitch_x": 100,
+  "pitch_y": 100,
+  "offset_x": 100,
+  "offset_y": 100,
+  "min_edge_clearance": 40,
+  "min_hole_clearance": 30
+}

@@ -1,0 +1,39 @@
+{
+  "name": "site-analysis",
+  "version": "0.1.0",
+  "description": "用真实 OSM、SRTM 与气候数据生成可追溯的建筑场地分析单图和 3×3 总板，附 CRS、QA、来源与哈希清单。",
+  "author": {
+    "name": "2536112822-droid"
+  },
+  "keywords": [
+    "site-analysis",
+    "gis",
+    "architecture",
+    "urban-design",
+    "terrain",
+    "climate"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "场地分析",
+    "shortDescription": "真实数据、来源追踪与九宫格场地分析",
+    "longDescription": "输入场地坐标、真实边界和照片证据，自动获取 OpenStreetMap、SRTM 地形与 Open-Meteo 气候数据，生成图底、土地利用、交通、地形、坡度坡向和风/日照图，并通过唯一运行目录、质量报告、来源记录和哈希清单保证成果可追溯。",
+    "developerName": "2536112822-droid",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "为这个场地生成一套带来源和 QA 的建筑分析九宫格。",
+      "基于真实坐标、地块边界和照片完成场地分析。",
+      "检查这套场地分析的数据口径、图面与可追溯性。"
+    ],
+    "brandColor": "#1F6F8B",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2536112822-droid/codex-architecture-workflow",
+  "homepage": "https://github.com/2536112822-droid/codex-architecture-workflow#readme"
+}

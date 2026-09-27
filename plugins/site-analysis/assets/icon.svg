@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Site Analysis">
+  <rect width="64" height="64" rx="14" fill="#1f6f8b"/>
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <path d="M14 46c8-12 20-14 36-20" opacity="0.55"/>
+    <path d="M11 53c9-14 23-17 42-25" opacity="0.85"/>
+    <path d="M9 59c11-15 27-19 48-28"/>
+  </g>
+  <path d="M41 15 L48 26 L38 31 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M41 15 L45 20 L41 19 L37 20 Z" fill="#ffffff"/>
+  <circle cx="32" cy="40" r="7" fill="none" stroke="#d8e9f2" stroke-width="2" stroke-dasharray="3 3"/>
+</svg>

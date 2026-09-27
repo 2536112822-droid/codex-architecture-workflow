@@ -1,0 +1,9 @@
+interface:
+  display_name: "Rhino + Grasshopper 建模"
+  short_description: "安全启动、结构化建模与可靠交付 Rhino/Grasshopper"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#6B5B95"
+  default_prompt: "使用 $rhino-model 启动并连接 Rhino，先读取当前文档状态，再安全完成建模、校核、保存与收尾。"
+policy:
+  allow_implicit_invocation: true
